@@ -1,0 +1,41 @@
+.login{
+    background-color: rgb(146, 168, 168);
+    width: 400px;
+    height: 240px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-radius: 3px;
+}
+.welGood{
+    padding-top: 14px;
+    flex:1;
+    font-size: 32px;
+}
+.formLogin{
+    flex:8;
+    background-color: blanchedalmond;
+    justify-content: center;
+    padding-bottom: 20px;
+    flex-direction: column;
+    
+    #login,#password,.btnLog{
+        border: none;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+        width: 240px;
+        height: 32px;
+        margin-top: 20px;
+    }
+    .btnLog:hover{
+        transition: 0.3s all;
+        background-color: rgb(75, 32, 83);
+        color: white;
+    }
+    #login:focus,#password:focus{
+        padding: 5px;
+        outline: 0;
+    }
+}

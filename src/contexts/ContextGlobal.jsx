@@ -5,6 +5,6 @@ export const ContextStorage = createContext()
 export const ContextGlobal = ({children}) => {
     
     return(
-        <ContextStorage.Provider value={{nome: 'Rodrigo'}}>{children}</ContextStorage.Provider>
+        <ContextStorage.Provider value={{name: 'Rodrigo'}}>{children}</ContextStorage.Provider>
     )
 }
