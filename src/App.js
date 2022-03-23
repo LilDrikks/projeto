@@ -1,5 +1,5 @@
 import './App.css';
-import Login from './components/Login';
+import Login from './components/Home/Login';
 import { ContextGlobal } from './contexts/ContextGlobal'
 function App() {
   return (
