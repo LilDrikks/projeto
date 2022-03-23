@@ -11,10 +11,15 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+.logodrikks{
+  position: absolute;
+  bottom: 10px;
+}
 .App p{
   margin-top: 20px;
   font-weight: 600;
   color: white;
+  
 }
 .svglogo{
   display: flex;

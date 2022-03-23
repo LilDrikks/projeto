@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
    
 }
 .fundobranco{
@@ -17,6 +18,7 @@
     
 }
 .fundopreto{
+    overflow: hidden;
     height: 98%;
     width: 96%;
     display: flex;
@@ -37,7 +39,7 @@
         margin-left: 40px;
         margin-right: 40px;
         min-width: 210px;
-        height: 32px;
+        height: 62px;
         background-color: rgba(255 , 255, 255, 0.11);
         border: none;
         border-radius: 5px;
@@ -76,30 +78,51 @@
     }
 }
 .containertarefas{
-    width: 100%;
+    width: 105%;
     margin-top: 20px;
     display: flex;
-    justify-content: center;
-    .tarefa1{
+    align-items: center;
+    flex-direction: column;
+    overflow-y: scroll;
+    margin-left: -4px;
+    padding: 0;
+    list-style: none;
+    overflow-x: hidden;
+    
+    .tarefa{
         background-color: rgba(0 , 0, 0, 0.5);
         width: 84%;
         border-radius: 5px;
         display: flex;
         justify-content: space-between;
+        margin-bottom: 20px;
+        z-index: 2;
+        
+        
+    }
+    .tarefaTrue{
+        background-image: url(../../images/Vector-true.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .tarefaFalse{
+        background-image: url(../../images/vetor-false.svg);
+        background-repeat: no-repeat;
+        background-position: center;
     }
     .desctarefa{
         margin: 20px;
-    }
-    h2{
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-image: linear-gradient(90deg, rgb(146, 29, 134), rgb(93, 95, 39));
-      
-    }
-    p{
-        margin-top: 20px;
-        color:white;
+        h2{
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(90deg, rgb(146, 29, 134), rgb(93, 95, 39));
+          
+        }
+        p{
+            margin-top: 20px;
+            color:white;
+        }
     }
     .divbuttons{
         display: flex;
@@ -107,8 +130,32 @@
         justify-content: space-around;
         margin-right: 10px;
     }
-    button{
+    .button40px{
         height: 40px;
         width: 40px;
+        border: none;
+        border-radius: 5px;
+        background-image: linear-gradient(-125deg, rgb(66, 42, 63), rgb(93, 95, 39));
+        cursor: pointer;
+    }
+    .button40px:hover{
+        background-image: linear-gradient(-125deg, rgb(93, 95, 39), rgb(66, 42, 63));
+    }
+    .svgBotton{
+        position: absolute;
+        z-index: 1;
+        background-image: url(../../images/svgprojeto.svg);
+        top: 16%;
+        svg{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .logodrikks{
+        position: absolute;
+        bottom: 10px;
+        color: white;
+        font-weight: 600;
+        z-index: 4;
     }
 }
