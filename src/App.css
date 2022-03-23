@@ -1,6 +1,22 @@
 .App {
   text-align: center;
+  display: flex;
   height: 100vh;
   width: 100%;
   justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(360deg, rgb(93, 95, 39), rgb(0, 0, 0));
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.svglogo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 567px;
+  width: 514px;
+  background-image: url(./images/svgprojeto.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
 }

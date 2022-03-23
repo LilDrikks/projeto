@@ -3,7 +3,6 @@ import { ContextStorage } from '../contexts/ContextGlobal'
 import FormLogin from './FormLogin'
 
 import './Login.scss'
-import WelcomeGoodboy from './WelcomeGoodboy'
 
 export default function Login() {
 
@@ -12,8 +11,9 @@ export default function Login() {
 
   return (
     <section className='login'>
-    <WelcomeGoodboy>Welcome!</WelcomeGoodboy>
-    <FormLogin />
+      <div className='login-black'>
+        <FormLogin />
+      </div>
     </section>
   )
 }
