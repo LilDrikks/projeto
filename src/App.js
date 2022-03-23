@@ -8,7 +8,7 @@ function App() {
   
   return (
     <ContextGlobal>
-      {location === "http://localhost:3000/" && 
+      {location === "https://projeto-portiflio.netlify.app/" && 
         <main className="App">
         <div className='svglogo'>
           <Login />
@@ -17,11 +17,11 @@ function App() {
         </main>
       }
       {
-        location === "http://localhost:3000/user-tasks" &&
+        location === "https://projeto-portiflio.netlify.app/user-tasks" &&
         <Tarefas />
       }
       {
-        location === "http://localhost:3000/task" &&
+        location === "https://projeto-portiflio.netlify.app/task" &&
         <TarefaOpen />
       }
       
