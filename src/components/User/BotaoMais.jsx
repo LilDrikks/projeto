@@ -4,7 +4,7 @@ function BotaoMais() {
 
   const task = () => {
     return (
-      window.location.href = "http://localhost:3000/task"
+      window.location.href = "https://projeto-portiflio.netlify.app/task"
   )}
 
   return (
