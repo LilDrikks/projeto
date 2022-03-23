@@ -1,13 +1,20 @@
 .App {
   text-align: center;
   display: flex;
-  height: 100%;
+  height: 100vh;
+  flex-direction: column;
   width: 100%;
+  overflow: hidden;
   justify-content: center;
   align-items: center;
   background-image: linear-gradient(360deg, rgb(93, 95, 39), rgb(0, 0, 0));
   background-repeat: no-repeat;
   background-position: center;
+}
+.App p{
+  margin-top: 20px;
+  font-weight: 600;
+  color: white;
 }
 .svglogo{
   display: flex;
