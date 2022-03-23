@@ -1,5 +1,5 @@
 import {useContext} from 'react'
-import { ContextStorage } from '../contexts/ContextGlobal'
+import { ContextStorage } from '../../contexts/ContextGlobal'
 import FormLogin from './FormLogin'
 
 import './Login.scss'
