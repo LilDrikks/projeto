@@ -1,10 +1,10 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 export const ContextStorage = createContext()
 
 export const ContextGlobal = ({children}) => {
-    
+    const [dados, setDatos] = useState({nome: 'rodrigo', idade: 18})
     return(
-        <ContextStorage.Provider value={{name: 'Rodrigo'}}>{children}</ContextStorage.Provider>
+        <ContextStorage.Provider value={{dados,setDatos}}>{children}</ContextStorage.Provider>
     )
 }

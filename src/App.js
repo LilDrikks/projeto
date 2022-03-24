@@ -1,30 +1,21 @@
 import './App.css';
-import Login from './components/Home/Login';
+
 import TarefaOpen from './components/TarefaOpen/TarefaOpen';
 import Tarefas from './components/User/Tarefas';
 import { ContextGlobal } from './contexts/ContextGlobal'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Home from './components/Home/Home';
 function App() {
-  const location = window.location.href
-  
+
   return (
     <ContextGlobal>
-      {location === "https://projeto-portiflio.netlify.app/" && 
-        <main className="App">
-        <div className='svglogo'>
-          <Login />
-        </div>
-        <p className='logodrikks'>@designdrikks</p>
-        </main>
-      }
-      {
-        location === "https://projeto-portiflio.netlify.app/user-tasks" &&
-        <Tarefas />
-      }
-      {
-        location === "https://projeto-portiflio.netlify.app/task" &&
-        <TarefaOpen />
-      }
-      
+      <BrowserRouter>
+       <Routes>
+          <Route path='/'element={ <Home />}/>
+          <Route path='/user-tasks' element={ <Tarefas />} />
+          <Route path='/task' element={<TarefaOpen />} />
+        </Routes>
+      </BrowserRouter>
     </ContextGlobal>
   );
 }

@@ -1,11 +1,7 @@
 import React from 'react'
 import Saudacoes from './Saudacoes'
-
+import {Link} from 'react-router-dom'
 function FormLogin() {
-  const userTask = () => {
-    return (
-      window.location.href = "https://projeto-portiflio.netlify.app/user-tasks"
-  )}
   return (
     <>
       <Saudacoes>Good Morning!</Saudacoes>
@@ -13,7 +9,9 @@ function FormLogin() {
         <label htmlFor="login"></label>
         <input type='text' name='user' id='login'/>
         <input type='password' name='password' id='password' />
-        <input type="button" className='btnLog' value={'GO!'} onClick={userTask}/>
+       <Link to="/user-tasks">
+        <input type="button" className='btnLog' value={'GO!'} />
+       </Link> 
       </form>
     </>
   )
