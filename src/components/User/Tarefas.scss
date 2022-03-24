@@ -23,6 +23,7 @@
     width: 96%;
     display: flex;
     flex-direction: row;
+    align-items: center;
     background-color: rgba(0 , 0, 0, 0.5);
     .header{
         display: flex;
@@ -30,10 +31,32 @@
         align-items: center;
         justify-content: center;
         flex: 1;
+        width: 94%;
+        height: 280px;
+        background-color: rgba(0 , 0, 0, 0.5);
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .headerwhite{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        margin-left: 20px;
+        margin-right: 20px;
+        width: 90%;
+        height: 280px;
+        background-color: rgba(255 , 255, 255, 0.11);
+        border-radius: 5px;
+        padding: 10px;
+        background-image: url(../../images/svgprojeto.svg);
+        background-position: center;
+        background-size: 100% 100%;
     }
     h1{
         font-size: 28px;
-        margin-top: 40px;
+        text-align: center;
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -42,9 +65,9 @@
     }
     .inputTask{
         margin-top: 20px;
-        margin-left: 40px;
-        margin-right: 40px;
-        width: 350px;
+        margin-left: 0;
+        margin-right: 0;
+        width: 95%;
         height: 38px;
         background-color: rgba(255 , 255, 255, 0.11);
         border: none;
@@ -56,13 +79,14 @@
         font-size: 16px;
   
     }
-    .button{
+    .input-button{
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        width: 350px;
+        width: 100%;
         margin-top: 20px;
+        
     }
     .add{
         align-self: end;
@@ -72,26 +96,24 @@
         border: none;
         border-radius: 5px;
         box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-        background-image: linear-gradient(-125deg, rgb(93, 95, 39), rgb(66, 42, 63));
+        background-image: linear-gradient(-125deg, rgb(93, 95, 39), rgb(102, 18, 94));
         font-weight: 600;
         cursor: pointer;
-        transition: all 0.3s;
+        transition: all 0.5s;
     }
     .add:hover{
         color: white;
-        background-image: linear-gradient(-125deg, rgb(66, 42, 63), rgb(93, 95, 39));
+        background-image: linear-gradient(-125deg, rgb(102, 18, 94), rgb(93, 95, 39));
 
     }
 }
 .containertarefas{
     width: 105%;
-    flex: 1;
-    margin-top: 20px;
+    flex: 2;
     display: flex;
     align-items: center;
     flex-direction: column;
     overflow-y: scroll;
-    margin-left: 0px;
     margin-right: -20px;
     padding: 0;
     list-style: none;
@@ -100,10 +122,14 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    background-color: rgba(0 , 0, 0, 0.5);
+    border-radius: 5px;
+    padding-top: 10px;
     
     .tarefa{
         background-color: rgba(0 , 0, 0, 0.5);
-        width: 350px;
+        width: 88%;
+        margin-right: 10px;
         border-radius: 5px;
         display: flex;
         justify-content: space-between;
@@ -128,7 +154,7 @@
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-image: linear-gradient(90deg, rgb(146, 29, 134), rgb(93, 95, 39));
+            background-image: linear-gradient(90deg, rgb(102, 18, 94), rgb(93, 95, 39));
           
         }
         p{
@@ -147,7 +173,7 @@
         width: 40px;
         border: none;
         border-radius: 5px;
-        background-image: linear-gradient(-125deg, rgb(66, 42, 63), rgb(93, 95, 39));
+        background-image: linear-gradient(-30deg, rgb(102, 18, 94), rgb(93, 95, 39));
         cursor: pointer;
     }
     .button40px:hover{
@@ -163,15 +189,25 @@
 @media (max-width: 1045px) {
     .fundopreto{
         flex-direction: column;
+        .headerwhite{
+            margin-top: 20px;
+            margin-left: 20px;
+        }
         .header{
             flex-direction: column;
-            margin-left: 24px;
+            margin-left: 0;
+            .inputTask{
+                margin-left: 0px;
+            }
+            .add{
+                margin-right: 14px;
+            }
         }
     }
     .containertarefas{
         margin-left: 0px;
         .tarefa{
-            margin-right: 0px;
+            margin-right: 40px;
         }
     }
 }

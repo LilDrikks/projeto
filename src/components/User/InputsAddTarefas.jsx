@@ -3,9 +3,9 @@ import React from 'react'
 function InputsAddTarefas() {
   return (
         <>
-          <div className='button'>
+          <div className='input-button'>
             <input type="text" className='inputTask'/>
-            <button className='add'>ADD</button>
+            <button className='add'>ADD!</button>
           </div>
         </>
   )

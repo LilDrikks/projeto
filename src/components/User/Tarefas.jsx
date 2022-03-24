@@ -15,10 +15,12 @@ function Tarefas() {
   return (
     <main className='tarefas'>
         <Fundos>
-           <header className='header' >
-           <Saudacoes>Hello let's add your tasks</Saudacoes>
-            <InputsAddTarefas />
-           </header>
+            <div className='headerwhite' >
+                <header className='header' >
+                <Saudacoes>Hello let's add your tasks</Saudacoes>
+                <InputsAddTarefas />
+                </header>
+            </div>
             <ul className='containertarefas'>
                 <Tarefa tarefaTrueFalse={"tarefaTrue"}>
                 <DescricaoTarefa>

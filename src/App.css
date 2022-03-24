@@ -7,7 +7,7 @@
   overflow: hidden;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(360deg, rgb(93, 95, 39), rgb(0, 0, 0));
+  background-image: linear-gradient(-70deg, rgb(93, 95, 39), rgb(0, 0, 0));
   background-repeat: no-repeat;
   background-position: center;
 }
