@@ -3,11 +3,10 @@ import React from 'react'
 function InputsAddTarefas() {
   return (
         <>
+          <div className='button'>
             <input type="text" className='inputTask'/>
-                <div className='button'>
-                    <button className='add'>ADD</button>
-                </div>
-    
+            <button className='add'>ADD</button>
+          </div>
         </>
   )
 }

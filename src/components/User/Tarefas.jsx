@@ -15,8 +15,10 @@ function Tarefas() {
   return (
     <main className='tarefas'>
         <Fundos>
-            <Saudacoes>Hello let's add your tasks</Saudacoes>
+           <header className='header' >
+           <Saudacoes>Hello let's add your tasks</Saudacoes>
             <InputsAddTarefas />
+           </header>
             <ul className='containertarefas'>
                 <Tarefa tarefaTrueFalse={"tarefaTrue"}>
                 <DescricaoTarefa>
@@ -80,8 +82,6 @@ function Tarefas() {
                 </Tarefa>
                 
                 <p className='logodrikks'>@Designdrikks</p>
-                <div className='svgBotton'>
-                </div>
             </ul>
         </Fundos>
     
