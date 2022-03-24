@@ -81,10 +81,10 @@ function Tarefas() {
                 </div>
                 </Tarefa>
                 
-                <p className='logodrikks'>@Designdrikks</p>
+               
             </ul>
         </Fundos>
-    
+        <p className='logodrikks'>@Designdrikks</p>
     </main>
   )
 }

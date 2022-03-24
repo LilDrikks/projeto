@@ -7,7 +7,7 @@ function Home() {
           <div className='svglogo'>
             <Login />
           </div>
-          <p className='logodrikks'>@designdrikks</p>
+          <p className='logodrikks'>@Designdrikks</p>
     </main>
   )
 }
