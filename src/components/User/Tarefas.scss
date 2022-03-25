@@ -23,7 +23,6 @@
     width: 96%;
     display: flex;
     flex-direction: row;
-    align-items: center;
     background-color: rgba(0 , 0, 0, 0.5);
 
     .header{
@@ -96,6 +95,7 @@
         margin-top: 20px;
         border: none;
         border-radius: 5px;
+        margin-right: 5px;
         box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
         background-image: linear-gradient(-125deg, rgb(93, 95, 39), rgb(102, 18, 94));
         font-weight: 600;
