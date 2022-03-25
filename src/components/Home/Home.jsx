@@ -3,11 +3,10 @@ import Login from './Login';
 
 function Home() {
   return (
-    <main className="App">
+    <main className="home">
           <div className='svglogo'>
             <Login />
           </div>
-          <p className='logodrikks'>@Designdrikks</p>
     </main>
   )
 }
