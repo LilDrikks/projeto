@@ -1,79 +1,59 @@
+@import "../../scss/variaveis&mixins.scss";
 .home {
+    @include justify-align;
     text-align: center;
-    display: flex;
     height: 100vh;
-    flex-direction: column;
-    width: 100%;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
     background-image: linear-gradient(-70deg, rgb(93, 95, 39), rgb(0, 0, 0));
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-.login{
-    background-color: rgba(255, 255, 255, 0.11);
-    max-width: 372px;
-    height: 372px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-wrap: wrap;
+    .svglogo {
+        @include justify-align;
+        @include svglogofundos;
+    }
+}
+.login-white {
+    background-color: $white11;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+}
+.login-black {
+    @include justify-align;
     flex-direction: column;
-    border-radius: 3px;
+    background-color: $black50;
+    height: 100%;
+    width: 85%;
     padding: 20px;
 }
-.login-black{
-    background-color: rgba(0, 0, 0, 0.5);
-    height: 100%;
-    width: 100%;
-    flex-direction: column;
+.form-login{
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.saudacoes{
-    padding-top: 14px;
-    font-size: 32px;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-image: linear-gradient(90deg, rgb(93, 95, 39), rgb(146, 29, 134));
-}
-.formLogin{
-    justify-content: center;
-    padding-bottom: 20px;
     flex-direction: column;
-    #login,#password{
-        border: none;
-        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-        background-color: rgba(255, 255, 255, 0.11);
-        border-radius: 3px;
-        max-width: 240px;
-        height: 38px;
-        margin-top: 20px;
-        color: white;
-        font-size: 16px;
-        padding-left: 10px;
-    }
-    .btnLog{
-        background-image: linear-gradient(90deg, rgb(93, 95, 39), rgb(146, 29, 134));
-        font-weight: 600;
-        border-radius: 3px;
-        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-        border: none;
-        min-width: 210px;
-        height: 32px;
-        margin-top: 20px;
-        cursor: pointer;
-        transition: 0.5s all ease;
-    }
-    .btnLog:hover{
-        
-        background-image: linear-gradient(90deg, rgb(146, 29, 134), rgb(93, 95, 39));
-        color: white;
-    }
-    #login:focus,#password:focus{
-        outline: 0;
-    }
+}
+.saudacoes {
+    font-size: 32px;
+    @include texto-colorido;
+}
+#login,
+#password {
+    @include inputs-border-height-mgtop;
+    background-color: $white11;
+    box-shadow: $shadow;
+    color: white;
+    font-size: 16px;
+    padding-left: 10px;
+}
+.btnLog {
+    @include inputs-border-height-mgtop;
+    background-image: $gradient90;
+    box-shadow: $shadow;
+    min-width: 210px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.5s all ease;
+}
+.btnLog:hover {
+    background-image: $gradient90-reverse;
+    color: white;
+}
+#login:focus,
+#password:focus {
+    outline: 0;
 }

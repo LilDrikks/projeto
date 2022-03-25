@@ -11,9 +11,9 @@ function App() {
     <ContextGlobal>
       <BrowserRouter>
        <Routes>
-          <Route path='/'element={ <Home />}/>
-          <Route path='/user-tasks' element={ <Tarefas />} />
-          <Route path='/task' element={<TarefaOpen />} />
+    <Route path='/'element={ <Home />}/>
+  <Route path='/user-tasks' element={ <Tarefas />} />
+  <Route path='/task' element={<TarefaOpen />} />
         </Routes>
       </BrowserRouter>
     </ContextGlobal>

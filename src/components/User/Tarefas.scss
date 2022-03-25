@@ -1,118 +1,79 @@
-
-.tarefas{
+@import "../../scss/variaveis&mixins.scss";
+.tarefas {
+    @include justify-align;
     background-image: linear-gradient(-135deg, rgb(93, 95, 39), rgb(0, 0, 0));
     height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-   overflow-x: hidden;
 }
-.fundobranco{
-    height: 96%;
-    width: 96%;
-    background-color: rgba(255 , 255, 255, 0.11);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+.fundobranco {
+    @include justify-align;
+    @include fundos96;
+    background-color: $white11;
+    border-radius: 5px;
 }
-.fundopreto{
+.fundopreto {
+    @include fundos96;
+    background-color: $black50;
     overflow: hidden;
-    height: 98%;
-    width: 96%;
     display: flex;
-    flex-direction: row;
-    background-color: rgba(0 , 0, 0, 0.5);
-
-    .header{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        flex: 1;
-        width: 94%;
-        height: 280px;
-        background-color: rgba(0 , 0, 0, 0.5);
-        padding: 10px;
-        border-radius: 5px;
+    .svglogo {
+        @include justify-align;
+        @include svglogofundos;
+        align-self: center;
     }
-    .headerwhite{
-        display: flex;
+    .headerwhite {
+        @include justify-align;
+        background-color: $white11;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
         flex: 1;
         margin-left: 20px;
         margin-right: 20px;
-        width: 90%;
         height: 280px;
-        background-color: rgba(255 , 255, 255, 0.11);
         border-radius: 5px;
         padding: 10px;
-        background-image: url(../../images/svgprojeto.svg);
-        background-position: center;
-        background-size: 100% 100%;
     }
-    h1{
-        font-size: 28px;
-        text-align: center;
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-image: linear-gradient(90deg, rgb(93, 95, 39), rgb(146, 29, 134));
-    
-    }
-    .inputTask{
-        margin-top: 20px;
-        margin-left: 0;
-        margin-right: 0;
-        width: 95%;
-        height: 38px;
-        background-color: rgba(255 , 255, 255, 0.11);
-        border: none;
+    .header {
+        @include justify-align;
+        background-color: $black50;
+        flex-direction: column;
+        flex: 1;
+        width: 94%;
+        padding: 10px;
         border-radius: 5px;
-        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    }
+    .inputs{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .inputTask {
+        @include inputs-border-height-mgtop;
+        background-color: $white11;
+        box-shadow: $shadow;
         outline: 0;
         padding-left: 10px;
         color: white;
         font-size: 16px;
-  
     }
-    .input-button{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 20px;
-        
-    }
-    .add{
+    .add {
+        @include inputs-border-height-mgtop;
+        box-shadow: $shadow;
+        background-image: $gradient90-reverse;
         align-self: end;
-        height: 32px;
         min-width: 154px;
-        margin-top: 20px;
-        border: none;
-        border-radius: 5px;
         margin-right: 5px;
-        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-        background-image: linear-gradient(-125deg, rgb(93, 95, 39), rgb(102, 18, 94));
         font-weight: 600;
         cursor: pointer;
         transition: all 0.5s;
     }
-    .add:hover{
+    .add:hover {
         color: white;
-        background-image: linear-gradient(-125deg, rgb(102, 18, 94), rgb(93, 95, 39));
-
+        background-image: $gradient90;
     }
 }
-.containertarefas{
-    width: 105%;
+.containertarefas {
     flex: 2;
-    display: flex;
+    margin-left: 20px;
     align-items: center;
     flex-direction: column;
     overflow-y: scroll;
@@ -124,91 +85,103 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    background-color: rgba(0 , 0, 0, 0.5);
+    background-color: $black50;
     border-radius: 5px;
-    padding-top: 10px;
-    
-    .tarefa{
-        background-color: rgba(0 , 0, 0, 0.5);
+    padding-top: 20px;
+
+    .tarefa {
+        background-color: $black50;
         width: 88%;
+        margin-left: 40px;
         margin-right: 10px;
         border-radius: 5px;
         display: flex;
         justify-content: space-between;
         margin-bottom: 20px;
-       
-        
-        
     }
-    .tarefaTrue{
+    .tarefaTrue {
         background-image: url(../../images/Vector-true.svg);
         background-repeat: no-repeat;
         background-position: center;
     }
-    .tarefaFalse{
+    .tarefaFalse {
         background-image: url(../../images/vetor-false.svg);
         background-repeat: no-repeat;
         background-position: center;
     }
-    .desctarefa{
+    .desctarefa {
         margin: 20px;
-        h2{
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-image: linear-gradient(90deg, rgb(102, 18, 94), rgb(93, 95, 39));
-          
+        h2 {
+            font-size: 32px;
+            @include texto-colorido;
         }
-        p{
+        p {
+            font-size: 18px;
             margin-top: 20px;
-            color:white;
+            color: white;
         }
     }
-    .divbuttons{
+    .divbuttons {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         margin-right: -20px;
     }
-    .button40px{
+    .button40px {
         height: 40px;
         width: 40px;
         border: none;
         border-radius: 5px;
-        background-image: linear-gradient(-30deg, rgb(102, 18, 94), rgb(93, 95, 39));
+        background-image: $gradient90-reverse;
         cursor: pointer;
     }
-    .button40px:hover{
-        background-image: linear-gradient(-125deg, rgb(93, 95, 39), rgb(66, 42, 63));
+    .button40px:hover {
+        background-image: $gradient90;
     }
 }
-@media (max-width: 1045px) {
-    .fundopreto{
+@media (max-width: 1320px) {
+    .fundopreto {
         flex-direction: column;
-        .svglogo{
+        .svglogo {
             height: auto;
             width: 100%;
         }
-        .headerwhite{
+        .headerwhite {
             margin-top: 20px;
             margin-left: 20px;
             height: auto;
         }
-        .header{
+        .header {
             flex-direction: column;
             margin-left: 0;
-            .inputTask{
-                margin-left: 0px;
+            .inputs{
+                justify-content: center;
+                align-items: center;
             }
-            .add{
+            h1{
+                margin-top: 20px;
+            }
+            .inputTask {
+                margin-left: 0px;
+                width: 96%;
+            }
+            .add {
                 margin-right: 14px;
+                margin-bottom: 10px;
             }
         }
     }
-    .containertarefas{
+    .containertarefas {
         margin-left: 0px;
-        .tarefa{
+        .tarefa {
             margin-right: 40px;
+        }
+    }
+}
+@media (max-width: 830px){
+    .containertarefas {
+        .tarefa{
+            margin-left: 20px;
         }
     }
 }

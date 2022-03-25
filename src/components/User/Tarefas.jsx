@@ -12,84 +12,123 @@ import Tarefa from './Tarefa'
 import './Tarefas.scss'
 function Tarefas() {
 
-  return (
-    <main className='tarefas'>
-        <Fundos>
-            <div className='svglogo'>
-            <div className='headerwhite' >
-                <header className='header' >
-                <Saudacoes>Hello let's add your tasks</Saudacoes>
-                <InputsAddTarefas />
-                </header>
-            </div>
-            </div>
-            <ul className='containertarefas'>
-                <Tarefa tarefaTrueFalse={"tarefaTrue"}>
-                <DescricaoTarefa>
-                <DescricaoTarefaH2>read a book...</DescricaoTarefaH2>
-                <DescricaoTarefaP>books for read: clean code...</DescricaoTarefaP>
-                </DescricaoTarefa>
-                <div className='divbuttons'>
-                    <BotaoMais />
-                    <BotaoDelete />
+    return (
+        <main className='tarefas'>
+            <Fundos>
+                <div className='svglogo'>
+                    <div className='headerwhite' >
+                        <header className='header' >
+                            <Saudacoes>Hello let's add your tasks</Saudacoes>
+                            <InputsAddTarefas />
+                        </header>
+                    </div>
                 </div>
-                </Tarefa>
-                <Tarefa tarefaTrueFalse={"tarefaFalse"}>
-                <DescricaoTarefa>
-                <DescricaoTarefaH2>learning prog...</DescricaoTarefaH2>
-                <DescricaoTarefaP>React, Node and MongoDB...</DescricaoTarefaP>
-                </DescricaoTarefa>
-                <div className='divbuttons'>
-                    <BotaoMais />
-                    <BotaoDelete />
-                </div>
-                </Tarefa>
-                <Tarefa tarefaTrueFalse={"tarefaTrue"}>
-                <DescricaoTarefa>
-                <DescricaoTarefaH2>read a book...</DescricaoTarefaH2>
-                <DescricaoTarefaP>books for read: clean code...</DescricaoTarefaP>
-                </DescricaoTarefa>
-                <div className='divbuttons'>
-                    <BotaoMais />
-                    <BotaoDelete />
-                </div>
-                </Tarefa>
-                <Tarefa tarefaTrueFalse={"tarefaFalse"}>
-                <DescricaoTarefa>
-                <DescricaoTarefaH2>learning prog...</DescricaoTarefaH2>
-                <DescricaoTarefaP>React, Node and MongoDB...</DescricaoTarefaP>
-                </DescricaoTarefa>
-                <div className='divbuttons'>
-                    <BotaoMais />
-                    <BotaoDelete />
-                </div>
-                </Tarefa>
-                <Tarefa tarefaTrueFalse={"tarefaTrue"}>
-                <DescricaoTarefa>
-                <DescricaoTarefaH2>read a book...</DescricaoTarefaH2>
-                <DescricaoTarefaP>books for read: clean code...</DescricaoTarefaP>
-                </DescricaoTarefa>
-                <div className='divbuttons'>
-                    <BotaoMais />
-                    <BotaoDelete />
-                </div>
-                </Tarefa>
-                <Tarefa tarefaTrueFalse={"tarefaFalse"}>
-                <DescricaoTarefa>
-                <DescricaoTarefaH2>learning prog...</DescricaoTarefaH2>
-                <DescricaoTarefaP>React, Node and MongoDB...</DescricaoTarefaP>
-                </DescricaoTarefa>
-                <div className='divbuttons'>
-                    <BotaoMais />
-                    <BotaoDelete />
-                </div>
-                </Tarefa>
-                
-               
-            </ul>
-        </Fundos>
-    </main>
-  )
+                <ul className='containertarefas'>
+                    <Tarefa tarefaTrueFalse={"tarefaTrue"}>
+                        <DescricaoTarefa>
+                            <DescricaoTarefaH2>learn programming in javascript</DescricaoTarefaH2>
+                            <DescricaoTarefaP>
+                                React, Node and MongoDB... React, Node and MongoDB...
+                            </DescricaoTarefaP>
+                        </DescricaoTarefa>
+                        <div className='divbuttons'>
+                            <BotaoMais />
+                            <BotaoDelete />
+                        </div>
+                    </Tarefa>
+                    <Tarefa tarefaTrueFalse={"tarefaFalse"}>
+                        <DescricaoTarefa>
+                            <DescricaoTarefaH2>read a book about programming</DescricaoTarefaH2>
+                            <DescricaoTarefaP>
+                                What is Lorem Ipsum?
+                                Lorem Ipsum is simply dummy text of the printing and typesett...
+                            </DescricaoTarefaP>
+                        </DescricaoTarefa>
+                        <div className='divbuttons'>
+                            <BotaoMais />
+                            <BotaoDelete />
+                        </div>
+                    </Tarefa>
+                    <Tarefa tarefaTrueFalse={"tarefaTrue"}>
+                        <DescricaoTarefa>
+                            <DescricaoTarefaH2>learn programming in javascript</DescricaoTarefaH2>
+                            <DescricaoTarefaP>
+                                React, Node and MongoDB... React, Node and MongoDB...
+                            </DescricaoTarefaP>
+                        </DescricaoTarefa>
+                        <div className='divbuttons'>
+                            <BotaoMais />
+                            <BotaoDelete />
+                        </div>
+                    </Tarefa>
+                    <Tarefa tarefaTrueFalse={"tarefaFalse"}>
+                        <DescricaoTarefa>
+                            <DescricaoTarefaH2>read a book about programming</DescricaoTarefaH2>
+                            <DescricaoTarefaP>
+                                What is Lorem Ipsum?
+                                Lorem Ipsum is simply dummy text of the printing and typesett...
+                            </DescricaoTarefaP>
+                        </DescricaoTarefa>
+                        <div className='divbuttons'>
+                            <BotaoMais />
+                            <BotaoDelete />
+                        </div>
+                    </Tarefa>
+                    <Tarefa tarefaTrueFalse={"tarefaTrue"}>
+                        <DescricaoTarefa>
+                            <DescricaoTarefaH2>learn programming in javascript</DescricaoTarefaH2>
+                            <DescricaoTarefaP>
+                                React, Node and MongoDB... React, Node and MongoDB...
+                            </DescricaoTarefaP>
+                        </DescricaoTarefa>
+                        <div className='divbuttons'>
+                            <BotaoMais />
+                            <BotaoDelete />
+                        </div>
+                    </Tarefa>
+                    <Tarefa tarefaTrueFalse={"tarefaFalse"}>
+                        <DescricaoTarefa>
+                            <DescricaoTarefaH2>read a book about programming</DescricaoTarefaH2>
+                            <DescricaoTarefaP>
+                                What is Lorem Ipsum?
+                                Lorem Ipsum is simply dummy text of the printing and typesett...
+                            </DescricaoTarefaP>
+                        </DescricaoTarefa>
+                        <div className='divbuttons'>
+                            <BotaoMais />
+                            <BotaoDelete />
+                        </div>
+                    </Tarefa>
+                    <Tarefa tarefaTrueFalse={"tarefaTrue"}>
+                        <DescricaoTarefa>
+                            <DescricaoTarefaH2>learn programming in javascript</DescricaoTarefaH2>
+                            <DescricaoTarefaP>
+                                React, Node and MongoDB... React, Node and MongoDB...
+                            </DescricaoTarefaP>
+                        </DescricaoTarefa>
+                        <div className='divbuttons'>
+                            <BotaoMais />
+                            <BotaoDelete />
+                        </div>
+                    </Tarefa>
+                    <Tarefa tarefaTrueFalse={"tarefaFalse"}>
+                        <DescricaoTarefa>
+                            <DescricaoTarefaH2>read a book about programming</DescricaoTarefaH2>
+                            <DescricaoTarefaP>
+                                What is Lorem Ipsum?
+                                Lorem Ipsum is simply dummy text of the printing and typesett...
+                            </DescricaoTarefaP>
+                        </DescricaoTarefa>
+                        <div className='divbuttons'>
+                            <BotaoMais />
+                            <BotaoDelete />
+                        </div>
+                    </Tarefa>
+
+                </ul>
+            </Fundos>
+        </main>
+    )
 }
 
 export default Tarefas  

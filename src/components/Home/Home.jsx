@@ -4,9 +4,9 @@ import Login from './Login';
 function Home() {
   return (
     <main className="home">
-          <div className='svglogo'>
-            <Login />
-          </div>
+      <div className='svglogo'>
+        <Login />
+      </div>
     </main>
   )
 }
