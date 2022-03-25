@@ -25,6 +25,7 @@
     flex-direction: row;
     align-items: center;
     background-color: rgba(0 , 0, 0, 0.5);
+
     .header{
         display: flex;
         flex-direction: column;
@@ -180,15 +181,13 @@
         background-image: linear-gradient(-125deg, rgb(93, 95, 39), rgb(66, 42, 63));
     }
 }
-.logodrikks{
-    position: absolute;
-    color: white;
-    font-weight: 600;
-    bottom: 2px;
-}
 @media (max-width: 1045px) {
     .fundopreto{
         flex-direction: column;
+        .svglogo{
+            height: auto;
+            width: 100%;
+        }
         .headerwhite{
             margin-top: 20px;
             margin-left: 20px;

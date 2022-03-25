@@ -15,6 +15,7 @@ function App() {
           <Route path='/user-tasks' element={ <Tarefas />} />
           <Route path='/task' element={<TarefaOpen />} />
         </Routes>
+        <p className='logodrikks'>@Designdrikks</p>
       </BrowserRouter>
     </ContextGlobal>
   );

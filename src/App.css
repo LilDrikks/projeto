@@ -13,13 +13,11 @@
 }
 .logodrikks{
   position: absolute;
-  bottom: 10px;
-}
-.App p{
-  margin-top: 20px;
-  font-weight: 600;
   color: white;
-  
+  font-weight: 600;
+  width: 100%;
+  bottom: 2px;
+  text-align: center;
 }
 .svglogo{
   display: flex;
@@ -28,7 +26,7 @@
   height: 567px;
   width: 514px;
   background-image: url(./images/svgprojeto.svg);
-    background-repeat: no-repeat;
-    background-position: center;
+  background-repeat: no-repeat;
+  background-position: center;
 
 }
