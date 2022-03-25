@@ -10,12 +10,15 @@ function App() {
   return (
     <ContextGlobal>
       <BrowserRouter>
+      <div className='App'>
+
        <Routes>
           <Route path='/'element={ <Home />}/>
           <Route path='/user-tasks' element={ <Tarefas />} />
           <Route path='/task' element={<TarefaOpen />} />
         </Routes>
         <p className='logodrikks'>@Designdrikks</p>
+      </div>
       </BrowserRouter>
     </ContextGlobal>
   );
