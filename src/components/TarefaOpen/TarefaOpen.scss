@@ -1,0 +1,8 @@
+@import "../../scss/variaveis&mixins";
+
+.tarefa_open {
+    @include justify-align;
+    width: 100%;
+    height: 100vh;
+    background-image: $background-page70;
+}

@@ -1,9 +1,10 @@
 import React from 'react'
-import Fundos from '../User/Fundos'
+import Fundos from '../User-Tarefas/Fundos'
+import './TarefaOpen.scss'
 
 function TarefaOpen() {
   return (
-    <main>
+    <main className='tarefa_open'>
       <Fundos>
         <h1>a</h1>
       </Fundos>

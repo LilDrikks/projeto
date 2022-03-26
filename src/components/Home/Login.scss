@@ -3,7 +3,7 @@
     @include justify-align;
     text-align: center;
     height: 100vh;
-    background-image: linear-gradient(-70deg, rgb(93, 95, 39), rgb(0, 0, 0));
+    background-image: $background-page70;
     .svglogo {
         @include justify-align;
         @include svglogofundos;

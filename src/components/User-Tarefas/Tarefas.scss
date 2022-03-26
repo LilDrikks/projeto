@@ -1,7 +1,7 @@
 @import "../../scss/variaveis&mixins.scss";
 .tarefas {
     @include justify-align;
-    background-image: linear-gradient(-135deg, rgb(93, 95, 39), rgb(0, 0, 0));
+    background-image: $background-page135;
     height: 100vh;
 }
 .fundobranco {
@@ -20,56 +20,56 @@
         @include svglogofundos;
         align-self: center;
     }
-    .headerwhite {
-        @include justify-align;
-        background-color: $white11;
-        flex-direction: column;
-        flex: 1;
-        margin-left: 20px;
-        margin-right: 20px;
-        height: 280px;
-        border-radius: 5px;
-        padding: 10px;
-    }
-    .header {
-        @include justify-align;
-        background-color: $black50;
-        flex-direction: column;
-        flex: 1;
-        width: 94%;
-        padding: 10px;
-        border-radius: 5px;
-    }
-    .inputs {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 20px;
-    }
-    .inputTask {
-        @include inputs-border-height-mgtop;
-        background-color: $white11;
-        box-shadow: $shadow;
-        outline: 0;
-        padding-left: 10px;
-        color: white;
-        font-size: 16px;
-    }
-    .add {
-        @include inputs-border-height-mgtop;
-        box-shadow: $shadow;
-        background-image: $gradient90-reverse;
-        align-self: end;
-        min-width: 154px;
-        margin-right: 5px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.5s;
-    }
-    .add:hover {
-        color: white;
-        background-image: $gradient90;
-    }
+}
+.headerwhite {
+    @include justify-align;
+    background-color: $white11;
+    flex-direction: column;
+    flex: 1;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 280px;
+    border-radius: 5px;
+    padding: 10px;
+}
+.header {
+    @include justify-align;
+    background-color: $black50;
+    flex-direction: column;
+    flex: 1;
+    width: 94%;
+    padding: 10px;
+    border-radius: 5px;
+}
+.inputs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+}
+.inputTask {
+    @include inputs-border-height-mgtop;
+    background-color: $white11;
+    box-shadow: $shadow;
+    outline: 0;
+    padding-left: 10px;
+    color: white;
+    font-size: 16px;
+}
+.add {
+    @include inputs-border-height-mgtop;
+    box-shadow: $shadow;
+    background-image: $gradient90-reverse;
+    align-self: end;
+    min-width: 154px;
+    margin-right: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.add:hover {
+    color: white;
+    background-image: $gradient90;
 }
 .containertarefas {
     flex: 2;
@@ -88,7 +88,6 @@
     background-color: $black50;
     border-radius: 5px;
     padding-top: 20px;
-
     .tarefa {
         background-color: $black50;
         width: 88%;

@@ -24,10 +24,12 @@
 }
 @mixin fundos96 {
     height: 96%;
-    width: 96%;  
+    width: 96%;
 }
 $white11: rgba(255, 255, 255, 0.11);
 $black50: rgba(0, 0, 0, 0.5);
+$background-page70: linear-gradient(-70deg, rgb(93, 95, 39), rgb(0, 0, 0));
+$background-page135: linear-gradient(-135deg, rgb(93, 95, 39), rgb(0, 0, 0));
 $gradient90: linear-gradient(90deg, rgb(93, 95, 39), rgb(146, 29, 134));
 $gradient90-reverse: linear-gradient(90deg, rgb(146, 29, 134), rgb(93, 95, 39));
 $shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
