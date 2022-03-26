@@ -40,7 +40,7 @@
         padding: 10px;
         border-radius: 5px;
     }
-    .inputs{
+    .inputs {
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -154,11 +154,11 @@
         .header {
             flex-direction: column;
             margin-left: 0;
-            .inputs{
+            .inputs {
                 justify-content: center;
                 align-items: center;
             }
-            h1{
+            h1 {
                 margin-top: 20px;
             }
             .inputTask {
@@ -178,10 +178,45 @@
         }
     }
 }
-@media (max-width: 830px){
+@media (max-width: 830px) {
     .containertarefas {
-        .tarefa{
+        .tarefa {
             margin-left: 20px;
+        }
+    }
+}
+@media (max-width: 560px) {
+    .containertarefas {
+        .desctarefa {
+            margin-left: 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            p {
+                width: 88%;
+                text-align: center;
+            }
+        }
+        .tarefa {
+            margin-left: 0px;
+            width: 100%;
+            flex-direction: column;
+            text-align: center;
+        }
+        .divbuttons {
+            width: 100%;
+            flex-direction: row;
+            justify-content: center;
+            gap: 80px;
+            margin-bottom: 20px;
+        }
+        .button40px {
+            height: 40px;
+            width: 40px;
+            border: none;
+            border-radius: 5px;
+            background-image: $gradient90-reverse;
+            cursor: pointer;
         }
     }
 }
