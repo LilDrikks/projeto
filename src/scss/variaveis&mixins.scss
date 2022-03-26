@@ -26,6 +26,14 @@
     height: 96%;
     width: 96%;
 }
+@mixin button40px {
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 5px;
+    background-image: $gradient90-reverse;
+    cursor: pointer;
+}
 $white11: rgba(255, 255, 255, 0.11);
 $black50: rgba(0, 0, 0, 0.5);
 $background-page70: linear-gradient(-70deg, rgb(93, 95, 39), rgb(0, 0, 0));
