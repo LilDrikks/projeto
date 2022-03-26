@@ -8,6 +8,7 @@ import BotaoDelete from '../User-Tarefas/BotaoDelete'
 import './TarefaOpen.scss'
 import BotaoTrue from './BotaoTrue'
 import BotaoFalse from './BotaoFalse'
+import Tarefa from '../User-Tarefas/Tarefa'
 
 function TarefaOpen() {
 
@@ -18,7 +19,7 @@ function TarefaOpen() {
           <DescricaoTarefaH2>learn programming in javascript</DescricaoTarefaH2>
           <BotaoMenos />
         </header>
-        <section className='secao-editar'>
+        <Tarefa>
           <article>
             <DescricaoTarefaP>
               What is Lorem Ipsum?
@@ -53,7 +54,7 @@ function TarefaOpen() {
             </DescricaoTarefaP>
           </article>
           <BotaoEditar />
-        </section>
+        </Tarefa>
         <footer className='footer'>
           <div className='botoes-true-false'>
             <BotaoTrue />

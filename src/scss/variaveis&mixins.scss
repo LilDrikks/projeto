@@ -19,6 +19,7 @@
     background-image: url(../../images/svgprojeto.svg);
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 100% 100%;
     height: 567px;
     width: 514px;
 }
@@ -26,13 +27,24 @@
     height: 96%;
     width: 96%;
 }
+@mixin fundoblack {
+    background-color: $black50;
+    margin: 10px;
+    border-radius: 5px;
+}
 @mixin button40px {
+    @include justify-align;
     height: 40px;
     width: 40px;
     border: none;
     border-radius: 5px;
     background-image: $gradient90-reverse;
     cursor: pointer;
+}
+@mixin padding20px-directionRow {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
 }
 $white11: rgba(255, 255, 255, 0.11);
 $black50: rgba(0, 0, 0, 0.5);
