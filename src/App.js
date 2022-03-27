@@ -1,18 +1,14 @@
-import TarefaOpen from './components/TarefaOpen/TarefaOpen';
-import Tarefas from './components/User-Tarefas/Tarefas';
 import { ContextGlobal } from './contexts/ContextGlobal'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Home from './components/Home/Home';
+import { BrowserRouter } from 'react-router-dom'
+
+import Routess from './routes/Routes';
+import history from './services/history'
 function App() {
 
   return (
     <ContextGlobal>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/user-tasks' element={<Tarefas />} />
-          <Route path='/task' element={<TarefaOpen />} />
-        </Routes>
+      <BrowserRouter history={history}>
+        <Routess />
       </BrowserRouter>
     </ContextGlobal>
   );

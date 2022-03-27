@@ -53,3 +53,7 @@ $background-page135: linear-gradient(-135deg, rgb(93, 95, 39), rgb(0, 0, 0));
 $gradient90: linear-gradient(90deg, rgb(93, 95, 39), rgb(146, 29, 134));
 $gradient90-reverse: linear-gradient(90deg, rgb(146, 29, 134), rgb(93, 95, 39));
 $shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+html{
+    background-image: $background-page70;
+}
