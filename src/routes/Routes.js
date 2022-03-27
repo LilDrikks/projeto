@@ -1,11 +1,13 @@
 import React from 'react'
-import { Routes, useLocation, Route } from "react-router-dom"
+import { Routes, useLocation, Route, Redirect } from "react-router-dom"
 import { TransitionGroup, CSSTransition } from "react-transition-group"
 
 import TarefaOpen from '../components/TarefaOpen/TarefaOpen';
 import Home from '../components/Home/Home';
 import Tarefas from '../components/User-Tarefas/Tarefas';
 import './Routes.scss'
+import { ContextStorage } from '../contexts/ContextGlobal';
+
 function Routess() {
     const location = useLocation()
     return (
@@ -16,6 +18,7 @@ function Routess() {
                     <Route path='/user-tasks' element={<Tarefas />} />
                     <Route path='/task' element={<TarefaOpen />} />
                 </Routes>
+                
             </CSSTransition>
         </TransitionGroup>
     )
