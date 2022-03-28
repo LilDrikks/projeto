@@ -1,5 +1,6 @@
 import React from 'react'
 import editar from '../../images/editar.svg'
+
 function BotaoEditar() {
   return (
     <button className='botao-editar'>
