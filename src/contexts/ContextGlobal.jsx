@@ -5,11 +5,13 @@ export const ContextStorage = createContext()
 
 export const ContextGlobal = ({ children }) => {
     function initialValues() {
-        return { email: '', password: '', tarefa: '', tasks: {}}
+        return { email: '', password: '', tarefa: ''}
     }
 
     const [values, setValues] = useState(initialValues)
     const [token, setToken] = useState("")
+    const [idUser, setIdUser] = useState("")
+    const [tarefas, setTarefas] = useState([])
 
     function onChange(event) {
         const { value, name } = event.target
@@ -17,16 +19,20 @@ export const ContextGlobal = ({ children }) => {
             ...values,
             [name]: value
         })
+        console.log(values)
     }
     const handleLogin = () => {
         console.log(values)
         api.post('/auth/user', {"email":values.email,"password":values.password})
             .then( async (res) => {
                 const token = await res.data.token
+                const id = await res.data.iduser
                 setToken(token)
+                setIdUser(id)
                 if(token){
                     setTimeout(() => {
                         localStorage.setItem("token", token)
+                        handledGetTarefasUser()
                     }, 1000);
                 }
             })
@@ -35,8 +41,11 @@ export const ContextGlobal = ({ children }) => {
             })
             
     };
-    const handledDadosUser = () => {
-        api.post('/auth/user/add-tarefa/6234343bc41b8689873114c4', {...values.tasks,"title":values.tarefa, "content":"add description"}, {
+    const handleDadosUser = () => {
+        const newTarefas = [...tarefas, {task:{title:values.tarefa, content:'teste6'}}]
+        setTarefas(newTarefas)
+        console.log(values)
+        api.post(`/auth/user/add-tarefa/${idUser}`, {"tasks":newTarefas}, {
             headers: {
                 'Authorization': 'Bearer ' + token
             }
@@ -49,9 +58,8 @@ export const ContextGlobal = ({ children }) => {
             })
             
     };
-    const handledTarefasUser = () => {
-        console.log(values)
-        api.get('/auth/user/tarefas/6234343bc41b8689873114c4', {
+    const handledGetTarefasUser = () => {
+        api.get(`/auth/user/tarefas/${idUser}`, {
             headers: {
                 'Authorization': 'Bearer ' + token
             }
@@ -59,8 +67,8 @@ export const ContextGlobal = ({ children }) => {
             .then( async (res) => {
                 console.log(res)
                 const tasks = await res.data.user.tasks
-                const tks = "tasks"
-                setValues({...values, [tks]: tasks})
+                setTarefas(tasks)
+                console.log(tarefas)
             })
             .catch((res) => {
                 console.log(res)
@@ -69,6 +77,6 @@ export const ContextGlobal = ({ children }) => {
     };
 
     return (
-        <ContextStorage.Provider value={{ values, onChange, handleLogin, token, handledDadosUser, handledTarefasUser}}>{children}</ContextStorage.Provider>
+        <ContextStorage.Provider value={{ values, onChange, handleLogin, token, handleDadosUser, handledGetTarefasUser}}>{children}</ContextStorage.Provider>
     )
 }
