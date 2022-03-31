@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import Saudacoes from './Saudacoes'
 import { Link } from 'react-router-dom'
 import { ContextStorage } from '../../contexts/ContextGlobal'

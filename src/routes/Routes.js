@@ -4,7 +4,6 @@ import { TransitionGroup, CSSTransition } from "react-transition-group"
 
 import TarefaOpen from '../components/TarefaOpen/TarefaOpen';
 import Home from '../components/Home/Home';
-import Tarefas from '../components/User-Tarefas/Tarefas';
 import './Routes.scss'
 import PrivateRoute from './PrivateRoute';
 
