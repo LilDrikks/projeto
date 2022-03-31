@@ -20,7 +20,6 @@
     flex-direction: column;
     background-color: $black50;
     height: 100%;
-    width: 85%;
     padding: 20px;
 }
 .form-login{
@@ -32,7 +31,7 @@
     @include texto-colorido;
 }
 #login,
-#password {
+#password, #confirmPassword, #name {
     @include inputs-border-height-mgtop;
     background-color: $white11;
     box-shadow: $shadow;

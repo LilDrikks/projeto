@@ -5,13 +5,14 @@ export const ContextStorage = createContext()
 
 export const ContextGlobal = ({ children }) => {
     function initialValues() {
-        return { email: '', password: '', tarefa: ''}
+        return { name: '', email: '', password: '', confirmPassword: '' ,tarefa: '' }
     }
 
     const [values, setValues] = useState(initialValues)
     const [token, setToken] = useState("")
     const [idUser, setIdUser] = useState("")
     const [tarefas, setTarefas] = useState([])
+    const [create, setCreate] = useState(false)
 
     function onChange(event) {
         const { value, name } = event.target
@@ -23,48 +24,44 @@ export const ContextGlobal = ({ children }) => {
     }
     const handleLogin = () => {
         console.log(values)
-        api.post('/auth/user', {"email":values.email,"password":values.password})
-            .then( async (res) => {
+        api.post('/auth/user', { "email": values.email, "password": values.password })
+            .then(async (res) => {
                 const token = await res.data.token
                 const id = await res.data.iduser
                 setToken(token)
                 setIdUser(id)
-                if(token){
-                    setTimeout(() => {
-                        localStorage.setItem("token", token)
-                        handledGetTarefasUser()
-                    }, 1000);
+                console.log(token, id)
+                if (token) {
+                    localStorage.setItem("token", token)
+                    handleGetTarefas(id, token)
                 }
             })
             .catch((res) => {
                 console.log(res)
             })
-            
     };
-    const handleDadosUser = () => {
-        const newTarefas = [...tarefas, {task:{title:values.tarefa, content:'teste6'}}]
+    const handleInsertTask = () => {
+        const newTarefas = [...tarefas, { task: { title: values.tarefa, content: 'teste6' } }]
         setTarefas(newTarefas)
-        console.log(values)
-        api.post(`/auth/user/add-tarefa/${idUser}`, {"tasks":newTarefas}, {
+        api.post(`/auth/user/add-tarefa/${idUser}`, { "tasks": newTarefas }, {
             headers: {
                 'Authorization': 'Bearer ' + token
             }
         })
-            .then( async (res) => {
+            .then(async (res) => {
                 console.log(res)
             })
             .catch((res) => {
                 console.log(res)
             })
-            
     };
-    const handledGetTarefasUser = () => {
-        api.get(`/auth/user/tarefas/${idUser}`, {
+    const handleGetTarefas = (id, getToken) => {
+        api.get(`/auth/user/tarefas/${id}`, {
             headers: {
-                'Authorization': 'Bearer ' + token
+                'Authorization': 'Bearer ' + getToken
             }
         })
-            .then( async (res) => {
+            .then(async (res) => {
                 console.log(res)
                 const tasks = await res.data.user.tasks
                 setTarefas(tasks)
@@ -73,10 +70,23 @@ export const ContextGlobal = ({ children }) => {
             .catch((res) => {
                 console.log(res)
             })
-            
     };
-
+    const handleCreateAcount = () => {
+        api.post('/auth/register', {name: values.name, email: values.email, password: values.password, confirmpassword: values.confirmPassword})
+        .then(async (res) => {
+            console.log(res)
+            setCreate(false)
+        })
+        .catch((res) => {
+            console.log(res)
+        })
+    }
     return (
-        <ContextStorage.Provider value={{ values, onChange, handleLogin, token, handleDadosUser, handledGetTarefasUser}}>{children}</ContextStorage.Provider>
+        <ContextStorage.Provider 
+            value={
+                { values, onChange, handleLogin,
+                token, handleInsertTask, handleGetTarefas,
+                tarefas, create, setCreate,
+                handleCreateAcount }}>{children}</ContextStorage.Provider>
     )
 }

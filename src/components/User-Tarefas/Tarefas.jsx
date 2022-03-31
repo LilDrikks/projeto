@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import Saudacoes from '../Home/Saudacoes'
 import Fundos from './Fundos'
 import InputsAddTarefas from './InputsAddTarefas'
@@ -10,8 +10,10 @@ import DescricaoTarefaP from './DescricaoTarefaP'
 import Tarefa from './Tarefa'
 
 import './Tarefas.scss'
+import { ContextStorage } from '../../contexts/ContextGlobal'
 function Tarefas() {
-
+    const dados = useContext(ContextStorage)
+    console.log(dados.tarefas)
     return (
         <main className='tarefas'>
             <Fundos>

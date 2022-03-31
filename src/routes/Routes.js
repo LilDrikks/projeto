@@ -1,12 +1,12 @@
 import React from 'react'
-import { Routes, useLocation, Route, Redirect } from "react-router-dom"
+import { Routes, useLocation, Route } from "react-router-dom"
 import { TransitionGroup, CSSTransition } from "react-transition-group"
 
 import TarefaOpen from '../components/TarefaOpen/TarefaOpen';
 import Home from '../components/Home/Home';
 import Tarefas from '../components/User-Tarefas/Tarefas';
 import './Routes.scss'
-import { ContextStorage } from '../contexts/ContextGlobal';
+import PrivateRoute from './PrivateRoute';
 
 function Routess() {
     const location = useLocation()
@@ -15,7 +15,7 @@ function Routess() {
             <CSSTransition key={location.key} classNames="transition" timeout={300}>
                 <Routes location={location}>
                     <Route path='/' element={<Home />} />
-                    <Route path='/user-tasks' element={<Tarefas />} />
+                    <Route path='/user-tasks' element={<PrivateRoute />} />
                     <Route path='/task' element={<TarefaOpen />} />
                 </Routes>
                 
