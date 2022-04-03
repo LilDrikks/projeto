@@ -20,17 +20,14 @@ export const ContextGlobal = ({ children }) => {
             ...values,
             [name]: value
         })
-        console.log(values)
     }
     const handleLogin = () => {
-        console.log(values)
         api.post('/auth/user', { "email": values.email, "password": values.password })
             .then(async (res) => {
                 const token = await res.data.token
                 const id = await res.data.iduser
                 setToken(token)
                 setIdUser(id)
-                console.log(token, id)
                 if (token) {
                     localStorage.setItem("token", token)
                     handleGetTarefas(id, token)
@@ -41,7 +38,7 @@ export const ContextGlobal = ({ children }) => {
             })
     };
     const handleInsertTask = () => {
-        const newTarefas = [...tarefas, { task: { title: values.tarefa, content: 'teste6' } }]
+        const newTarefas = [...tarefas, { task: { title: values.tarefa, content: 'teste6', status: true } }]
         setTarefas(newTarefas)
         api.post(`/auth/user/add-tarefa/${idUser}`, { "tasks": newTarefas }, {
             headers: {
@@ -50,6 +47,10 @@ export const ContextGlobal = ({ children }) => {
         })
             .then(async (res) => {
                 console.log(res)
+                if (token) {
+                    localStorage.setItem("token", token)
+                    handleGetTarefas(idUser, token)
+                }
             })
             .catch((res) => {
                 console.log(res)
@@ -65,7 +66,6 @@ export const ContextGlobal = ({ children }) => {
                 console.log(res)
                 const tasks = await res.data.user.tasks
                 setTarefas(tasks)
-                console.log(tarefas)
             })
             .catch((res) => {
                 console.log(res)

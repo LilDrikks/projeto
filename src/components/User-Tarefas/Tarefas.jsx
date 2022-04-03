@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import Saudacoes from '../Home/Saudacoes'
 import Fundos from './Fundos'
 import InputsAddTarefas from './InputsAddTarefas'
@@ -12,9 +12,11 @@ import Tarefa from './Tarefa'
 import './Tarefas.scss'
 import { ContextStorage } from '../../contexts/ContextGlobal'
 function Tarefas() {
-    const dados = useContext(ContextStorage)
-    console.log(dados.tarefas)
+    const { tarefas } = useContext(ContextStorage)
+    let tasks = tarefas.reverse()
+    console.log(tasks)
     return (
+
         <main className='tarefas'>
             <Fundos>
                 <div className='svglogo'>
@@ -26,18 +28,23 @@ function Tarefas() {
                     </div>
                 </div>
                 <ul className='containertarefas'>
-                    <Tarefa tarefaTrueFalse={"tarefaTrue"}>
-                        <DescricaoTarefa>
-                            <DescricaoTarefaH2>learn programming in javascript</DescricaoTarefaH2>
-                            <DescricaoTarefaP>
-                                React, Node and MongoDB... React, Node and MongoDB...
-                            </DescricaoTarefaP>
-                        </DescricaoTarefa>
-                        <div className='divbuttons'>
-                            <BotaoMais />
-                            <BotaoDelete />
-                        </div>
-                    </Tarefa>
+                    {tasks.map((item, index) => {
+                        const {task} = item
+                        return (
+                            <Tarefa key={index} tarefaTrueFalse={task.status ? "tarefaTrue" : "tarefaFalse"}>
+                                <DescricaoTarefa>
+                                    <DescricaoTarefaH2>{task.title}</DescricaoTarefaH2>
+                                    <DescricaoTarefaP>
+                                        {task.content}
+                                    </DescricaoTarefaP>
+                                </DescricaoTarefa>
+                                <div className='divbuttons'>
+                                    <BotaoMais />
+                                    <BotaoDelete />
+                                </div>
+                            </Tarefa>
+                        )
+                    })}
                     <Tarefa tarefaTrueFalse={"tarefaFalse"}>
                         <DescricaoTarefa>
                             <DescricaoTarefaH2>read a book about programming</DescricaoTarefaH2>
