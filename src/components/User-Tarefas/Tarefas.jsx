@@ -13,8 +13,6 @@ import './Tarefas.scss'
 import { ContextStorage } from '../../contexts/ContextGlobal'
 function Tarefas() {
     const { tarefas } = useContext(ContextStorage)
-    let tasks = tarefas.reverse()
-    console.log(tasks)
     return (
 
         <main className='tarefas'>
@@ -28,8 +26,9 @@ function Tarefas() {
                     </div>
                 </div>
                 <ul className='containertarefas'>
-                    {tasks.map((item, index) => {
-                        const {task} = item
+                    {tarefas.map((item, index) => {
+                        const { task } = item
+                        console.log(index)
                         return (
                             <Tarefa key={index} tarefaTrueFalse={task.status ? "tarefaTrue" : "tarefaFalse"}>
                                 <DescricaoTarefa>
@@ -40,100 +39,11 @@ function Tarefas() {
                                 </DescricaoTarefa>
                                 <div className='divbuttons'>
                                     <BotaoMais />
-                                    <BotaoDelete />
+                                    <BotaoDelete index={index} />
                                 </div>
                             </Tarefa>
                         )
                     })}
-                    <Tarefa tarefaTrueFalse={"tarefaFalse"}>
-                        <DescricaoTarefa>
-                            <DescricaoTarefaH2>read a book about programming</DescricaoTarefaH2>
-                            <DescricaoTarefaP>
-                                What is Lorem Ipsum?
-                                Lorem Ipsum is simply dummy text of the printing and typesett...
-                            </DescricaoTarefaP>
-                        </DescricaoTarefa>
-                        <div className='divbuttons'>
-                            <BotaoMais />
-                            <BotaoDelete />
-                        </div>
-                    </Tarefa>
-                    <Tarefa tarefaTrueFalse={"tarefaTrue"}>
-                        <DescricaoTarefa>
-                            <DescricaoTarefaH2>learn programming in javascript</DescricaoTarefaH2>
-                            <DescricaoTarefaP>
-                                React, Node and MongoDB... React, Node and MongoDB...
-                            </DescricaoTarefaP>
-                        </DescricaoTarefa>
-                        <div className='divbuttons'>
-                            <BotaoMais />
-                            <BotaoDelete />
-                        </div>
-                    </Tarefa>
-                    <Tarefa tarefaTrueFalse={"tarefaFalse"}>
-                        <DescricaoTarefa>
-                            <DescricaoTarefaH2>read a book about programming</DescricaoTarefaH2>
-                            <DescricaoTarefaP>
-                                What is Lorem Ipsum?
-                                Lorem Ipsum is simply dummy text of the printing and typesett...
-                            </DescricaoTarefaP>
-                        </DescricaoTarefa>
-                        <div className='divbuttons'>
-                            <BotaoMais />
-                            <BotaoDelete />
-                        </div>
-                    </Tarefa>
-                    <Tarefa tarefaTrueFalse={"tarefaTrue"}>
-                        <DescricaoTarefa>
-                            <DescricaoTarefaH2>learn programming in javascript</DescricaoTarefaH2>
-                            <DescricaoTarefaP>
-                                React, Node and MongoDB... React, Node and MongoDB...
-                            </DescricaoTarefaP>
-                        </DescricaoTarefa>
-                        <div className='divbuttons'>
-                            <BotaoMais />
-                            <BotaoDelete />
-                        </div>
-                    </Tarefa>
-                    <Tarefa tarefaTrueFalse={"tarefaFalse"}>
-                        <DescricaoTarefa>
-                            <DescricaoTarefaH2>read a book about programming</DescricaoTarefaH2>
-                            <DescricaoTarefaP>
-                                What is Lorem Ipsum?
-                                Lorem Ipsum is simply dummy text of the printing and typesett...
-                            </DescricaoTarefaP>
-                        </DescricaoTarefa>
-                        <div className='divbuttons'>
-                            <BotaoMais />
-                            <BotaoDelete />
-                        </div>
-                    </Tarefa>
-                    <Tarefa tarefaTrueFalse={"tarefaTrue"}>
-                        <DescricaoTarefa>
-                            <DescricaoTarefaH2>learn programming in javascript</DescricaoTarefaH2>
-                            <DescricaoTarefaP>
-                                React, Node and MongoDB... React, Node and MongoDB...
-                            </DescricaoTarefaP>
-                        </DescricaoTarefa>
-                        <div className='divbuttons'>
-                            <BotaoMais />
-                            <BotaoDelete />
-                        </div>
-                    </Tarefa>
-                    <Tarefa tarefaTrueFalse={"tarefaFalse"}>
-                        <DescricaoTarefa>
-                            <DescricaoTarefaH2>read a book about programming</DescricaoTarefaH2>
-                            <DescricaoTarefaP>
-                                What is Lorem Ipsum?
-                                Lorem Ipsum is simply dummy text of the printing and typesett...
-                            </DescricaoTarefaP>
-                        </DescricaoTarefa>
-                        <div className='divbuttons'>
-                            <BotaoMais />
-                            <BotaoDelete />
-                        </div>
-                    </Tarefa>
-
                 </ul>
             </Fundos>
         </main>

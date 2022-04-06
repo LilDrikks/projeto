@@ -9,11 +9,11 @@ export const ContextGlobal = ({ children }) => {
     }
 
     const [values, setValues] = useState(initialValues)
-    const [token, setToken] = useState("")
-    const [idUser, setIdUser] = useState("")
-    const [tarefas, setTarefas] = useState([])
+    const [token, setToken] = useState(localStorage.getItem('token'))
+    const [idUser, setIdUser] = useState(localStorage.getItem('id'))
+    const [tarefas, setTarefas] = useState(JSON.parse(localStorage.getItem('tasks')))
     const [create, setCreate] = useState(false)
-
+    
     function onChange(event) {
         const { value, name } = event.target
         setValues({
@@ -30,6 +30,7 @@ export const ContextGlobal = ({ children }) => {
                 setIdUser(id)
                 if (token) {
                     localStorage.setItem("token", token)
+                    localStorage.setItem("id", id)
                     handleGetTarefas(id, token)
                 }
             })
@@ -38,7 +39,7 @@ export const ContextGlobal = ({ children }) => {
             })
     };
     const handleInsertTask = () => {
-        const newTarefas = [...tarefas, { task: { title: values.tarefa, content: 'teste6', status: true } }]
+        const newTarefas = [{ task: { title: values.tarefa, content: 'teste6', status: true }}, ...tarefas]
         setTarefas(newTarefas)
         api.post(`/auth/user/add-tarefa/${idUser}`, { "tasks": newTarefas }, {
             headers: {
@@ -46,7 +47,6 @@ export const ContextGlobal = ({ children }) => {
             }
         })
             .then(async (res) => {
-                console.log(res)
                 if (token) {
                     localStorage.setItem("token", token)
                     handleGetTarefas(idUser, token)
@@ -63,8 +63,8 @@ export const ContextGlobal = ({ children }) => {
             }
         })
             .then(async (res) => {
-                console.log(res)
                 const tasks = await res.data.user.tasks
+                localStorage.setItem('tasks', JSON.stringify(tasks))
                 setTarefas(tasks)
             })
             .catch((res) => {
