@@ -13,7 +13,7 @@ function Routess() {
         <Routes location={location}>
             <Route path='/' element={<PrivateRoute />} />
             <Route path='/user-tasks' element={<PrivateRoute />} />
-            <Route path='/task' element={token ? <TarefaOpen /> : <Home />} />
+            <Route path='/task/:id' element={token ? <TarefaOpen /> : <Home />} />
         </Routes>
     )
 }

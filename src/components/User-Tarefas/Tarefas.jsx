@@ -26,7 +26,7 @@ function Tarefas() {
                     </div>
                 </div>
                 <ul className='containertarefas'>
-                    {tarefas.map((item, index) => {
+                    {tarefas && tarefas.map((item, index) => {
                         const { task } = item
                         console.log(index)
                         return (
@@ -38,7 +38,7 @@ function Tarefas() {
                                     </DescricaoTarefaP>
                                 </DescricaoTarefa>
                                 <div className='divbuttons'>
-                                    <BotaoMais />
+                                    <BotaoMais index={index} />
                                     <BotaoDelete index={index} />
                                 </div>
                             </Tarefa>

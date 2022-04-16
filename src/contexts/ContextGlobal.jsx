@@ -5,7 +5,7 @@ export const ContextStorage = createContext()
 
 export const ContextGlobal = ({ children }) => {
     function initialValues() {
-        return { name: '', email: '', password: '', confirmPassword: '' ,tarefa: '' }
+        return { name: '', email: '', password: '', confirmPassword: '', tarefa: '' }
     }
 
     const [values, setValues] = useState(initialValues)
@@ -13,6 +13,7 @@ export const ContextGlobal = ({ children }) => {
     const [idUser, setIdUser] = useState(localStorage.getItem('id'))
     const [tarefas, setTarefas] = useState(JSON.parse(localStorage.getItem('tasks')))
     const [create, setCreate] = useState(false)
+    const [editar, setEditar] = useState(false)
 
     function onChange(event) {
         const { value, name } = event.target
@@ -39,7 +40,7 @@ export const ContextGlobal = ({ children }) => {
             })
     };
     const handleInsertTask = () => {
-        const newTarefas = [{ task: { title: values.tarefa, content: 'teste6', status: true }}, ...tarefas]
+        const newTarefas = [{ task: { title: values.tarefa, content: 'teste6', status: true } }, ...tarefas]
         setTarefas(newTarefas)
         api.post(`/auth/user/add-tarefa/${idUser}`, { "tasks": newTarefas }, {
             headers: {
@@ -48,7 +49,6 @@ export const ContextGlobal = ({ children }) => {
         })
             .then(async (res) => {
                 if (token) {
-                    localStorage.setItem("token", token)
                     handleGetTarefas(idUser, token)
                 }
             })
@@ -90,21 +90,24 @@ export const ContextGlobal = ({ children }) => {
             })
     };
     const handleCreateAcount = () => {
-        api.post('/auth/register', {name: values.name, email: values.email, password: values.password, confirmpassword: values.confirmPassword})
-        .then(async (res) => {
-            console.log(res)
-            setCreate(false)
-        })
-        .catch((res) => {
-            console.log(res)
-        })
+        api.post('/auth/register', { name: values.name, email: values.email, password: values.password, confirmpassword: values.confirmPassword })
+            .then(async (res) => {
+                console.log(res)
+                setCreate(false)
+            })
+            .catch((res) => {
+                console.log(res)
+            })
     }
     return (
-        <ContextStorage.Provider 
+        <ContextStorage.Provider
             value={
-                { values, onChange, handleLogin,
-                token, handleInsertTask, handleGetTarefas,
-                tarefas, create, setCreate,
-                handleCreateAcount, handleDeleteTask }}>{children}</ContextStorage.Provider>
+                {
+                    values, onChange, handleLogin,
+                    token, handleInsertTask, handleGetTarefas,
+                    tarefas, create, setCreate,
+                    handleCreateAcount, handleDeleteTask,
+                    editar, setEditar
+                }}>{children}</ContextStorage.Provider>
     )
 }

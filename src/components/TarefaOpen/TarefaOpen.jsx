@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import DescricaoTarefaH2 from '../User-Tarefas/DescricaoTarefaH2'
 import DescricaoTarefaP from '../User-Tarefas/DescricaoTarefaP'
 import Fundos from '../User-Tarefas/Fundos'
@@ -9,49 +9,33 @@ import './TarefaOpen.scss'
 import BotaoTrue from './BotaoTrue'
 import BotaoFalse from './BotaoFalse'
 import Tarefa from '../User-Tarefas/Tarefa'
+import { ContextStorage } from '../../contexts/ContextGlobal'
 
 function TarefaOpen() {
+  
+  let indice = window.location.href
+  indice = indice.substring(indice.length - 1, indice.length)
+  console.log(indice)
 
+  const {editar, tarefas} = useContext(ContextStorage)
+  const task = tarefas[indice].task
+  console.log(task)
+  console.log(editar)
   return (
     <main className='tarefa_open'>
       <Fundos>
         <header>
-          <DescricaoTarefaH2>learn programming in javascript</DescricaoTarefaH2>
+          <DescricaoTarefaH2>{task.title}</DescricaoTarefaH2>
           <BotaoMenos />
         </header>
         <Tarefa>
           <article>
-            <DescricaoTarefaP>
-              What is Lorem Ipsum?
-              Lorem Ipsum is simply dummy text of the printing and typesett...
-              What is Lorem Ipsum?
-              Lorem Ipsum is simply dummy text of the printing and typesett...
-              What is Lorem Ipsum?
-              Lorem Ipsum is simply dummy text of the printing and typesett...
-              What is Lorem Ipsum?
-              Lorem Ipsum is simply dummy text of the printing and typesett...
-              What is Lorem Ipsum?
-              Lorem Ipsum is simply dummy text of the printing and typesett...
-              What is Lorem Ipsum?
-              Lorem Ipsum is simply dummy text of the printing and typesett...
-              What is Lorem Ipsum?
-              Lorem Ipsum is simply dummy text of the printing and typesett...
-              What is Lorem Ipsum?
-              Lorem Ipsum is simply dummy text of the printing and typesett...
-              What is Lorem Ipsum?
-              Lorem Ipsum is simply dummy text of the printing and typesett...
-              What is Lorem Ipsum?
-              Lorem Ipsum is simply dummy text of the printing and typesett...
-              What is Lorem Ipsum?
-              Lorem Ipsum is simply dummy text of the printing and typesett...
-              What is Lorem Ipsum?
-              Lorem Ipsum is simply dummy text of the printing and typesett...
-              What is Lorem Ipsum?
-              Lorem Ipsum is simply dummy text of the printing and typesett...
-              What is Lorem Ipsum?
-              Lorem Ipsum is simply dummy text of the printing and typesett...
+            {editar 
+            ? <input className='inputEdit' type="text" defaultValue={task.content} /> 
+            : <DescricaoTarefaP>
+              {task.content}
 
-            </DescricaoTarefaP>
+            </DescricaoTarefaP>}
           </article>
           <BotaoEditar />
         </Tarefa>

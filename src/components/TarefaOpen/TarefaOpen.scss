@@ -1,7 +1,6 @@
 @import "../../scss/variaveis&mixins";
 
 .tarefa_open {
-    @include justify-align;
     width: 100%;
     height: 100vh;
     background-image: $background-page70;
@@ -43,6 +42,7 @@
         @include padding20px-directionRow;
         color: white;
         gap: 20px;
+        justify-content: space-between;
         p {
             max-height: 400px;
         }
@@ -52,7 +52,9 @@
         .botao-editar:hover{
             background-image: $gradient90;
         }
-        
+        .inputEdit{
+            height: 32px
+        }
     }
     .footer {
         @include fundoblack;
