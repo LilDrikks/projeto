@@ -43,8 +43,25 @@
         color: white;
         gap: 20px;
         justify-content: space-between;
+        .inputEdit{
+            width: 100%;
+        }
+        .tarefaTrue {
+            background-image: url(../../images/Vector-true.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .tarefaFalse {
+            background-image: url(../../images/vetor-false.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
         p {
             max-height: 400px;
+        }
+        article{
+            width: 100%;
+            margin-right: 8px
         }
         .botao-editar {
             @include button40px;

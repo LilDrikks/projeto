@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState } from "react"
 import api from "../services/Api";
 
 export const ContextStorage = createContext()
@@ -25,6 +25,7 @@ export const ContextGlobal = ({ children }) => {
     const handleLogin = () => {
         api.post('/auth/user', { "email": values.email, "password": values.password })
             .then(async (res) => {
+                console.log(res.status)
                 const token = await res.data.token
                 const id = await res.data.iduser
                 setToken(token)
@@ -36,11 +37,11 @@ export const ContextGlobal = ({ children }) => {
                 }
             })
             .catch((res) => {
-                console.log(res)
+                console.log(res.status)
             })
-    };
+    }
     const handleInsertTask = () => {
-        const newTarefas = [{ task: { title: values.tarefa, content: 'teste6', status: true } }, ...tarefas]
+        const newTarefas = [{ task: { title: values.tarefa, content: 'Adicione um comentário a tarefa...', status: true } }, ...tarefas]
         setTarefas(newTarefas)
         api.post(`/auth/user/add-tarefa/${idUser}`, { "tasks": newTarefas }, {
             headers: {
@@ -55,7 +56,7 @@ export const ContextGlobal = ({ children }) => {
             .catch((res) => {
                 console.log(res)
             })
-    };
+    }
     const handleDeleteTask = (deletaTarefa) => {
         const newTarefas = deletaTarefa
         setTarefas(newTarefas)
@@ -73,7 +74,7 @@ export const ContextGlobal = ({ children }) => {
             .catch((res) => {
                 console.log(res)
             })
-    };
+    }
     const handleGetTarefas = (id, getToken) => {
         api.get(`/auth/user/tarefas/${id}`, {
             headers: {
@@ -88,7 +89,7 @@ export const ContextGlobal = ({ children }) => {
             .catch((res) => {
                 console.log(res)
             })
-    };
+    }
     const handleCreateAcount = () => {
         api.post('/auth/register', { name: values.name, email: values.email, password: values.password, confirmpassword: values.confirmPassword })
             .then(async (res) => {

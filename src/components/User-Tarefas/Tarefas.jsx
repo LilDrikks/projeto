@@ -28,7 +28,6 @@ function Tarefas() {
                 <ul className='containertarefas'>
                     {tarefas && tarefas.map((item, index) => {
                         const { task } = item
-                        console.log(index)
                         return (
                             <Tarefa key={index} tarefaTrueFalse={task.status ? "tarefaTrue" : "tarefaFalse"}>
                                 <DescricaoTarefa>

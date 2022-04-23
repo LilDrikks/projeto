@@ -1,9 +1,9 @@
 import React from 'react'
 
+function Tarefa({children}) {
 
-function Tarefa({children, tarefaTrueFalse}) {
   return (
-    <li className={"tarefa " +tarefaTrueFalse}>
+    <li className={"tarefa"}>
       {children}
     </li>
   )

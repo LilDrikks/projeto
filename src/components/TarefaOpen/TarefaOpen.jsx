@@ -12,15 +12,14 @@ import Tarefa from '../User-Tarefas/Tarefa'
 import { ContextStorage } from '../../contexts/ContextGlobal'
 
 function TarefaOpen() {
-  
+
   let indice = window.location.href
   indice = indice.substring(indice.length - 1, indice.length)
-  console.log(indice)
+  
+  const { editar, tarefas, onChange } = useContext(ContextStorage)
 
-  const {editar, tarefas} = useContext(ContextStorage)
   const task = tarefas[indice].task
-  console.log(task)
-  console.log(editar)
+
   return (
     <main className='tarefa_open'>
       <Fundos>
@@ -28,20 +27,22 @@ function TarefaOpen() {
           <DescricaoTarefaH2>{task.title}</DescricaoTarefaH2>
           <BotaoMenos />
         </header>
-        <Tarefa>
+        <Tarefa indice={indice}>
           <article>
-            {editar 
-            ? <input className='inputEdit' type="text" defaultValue={task.content} /> 
-            : <DescricaoTarefaP>
-              {task.content}
-
-            </DescricaoTarefaP>}
+            {editar
+              ? <input className='inputEdit'
+                type="text" placeholder={task.content} onChange={onChange}
+                name="tarefa"
+              />
+              : <DescricaoTarefaP>
+                {task.content}
+              </DescricaoTarefaP>}
           </article>
-          <BotaoEditar />
+          {editar ? <BotaoTrue /> : <BotaoEditar />}
         </Tarefa>
         <footer className='footer'>
           <div className='botoes-true-false'>
-            <BotaoTrue />
+            <BotaoTrue indice={indice}/>
             <BotaoFalse />
           </div>
           <BotaoDelete />
