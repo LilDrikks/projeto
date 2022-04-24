@@ -33,6 +33,7 @@ function TarefaOpen() {
               ? <input className='inputEdit'
                 type="text" placeholder={task.content} onChange={onChange}
                 name="tarefa"
+                defaultValue={task.content}
               />
               : <DescricaoTarefaP>
                 {task.content}

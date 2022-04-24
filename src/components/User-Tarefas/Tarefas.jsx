@@ -26,14 +26,14 @@ function Tarefas() {
                     </div>
                 </div>
                 <ul className='containertarefas'>
-                    {tarefas && tarefas.map((item, index) => {
+                    {tarefas ? tarefas.map((item, index) => {
                         const { task } = item
                         return (
                             <Tarefa key={index} tarefaTrueFalse={task.status ? "tarefaTrue" : "tarefaFalse"}>
                                 <DescricaoTarefa>
                                     <DescricaoTarefaH2>{task.title}</DescricaoTarefaH2>
                                     <DescricaoTarefaP>
-                                        {task.content}
+                                        {task.content ? task.content : 'not found'}
                                     </DescricaoTarefaP>
                                 </DescricaoTarefa>
                                 <div className='divbuttons'>
@@ -42,7 +42,8 @@ function Tarefas() {
                                 </div>
                             </Tarefa>
                         )
-                    })}
+                    })
+                : <p>Fail find tasks</p>}
                 </ul>
             </Fundos>
         </main>

@@ -4,11 +4,11 @@ import svgTrue from '../../images/Vector-true-40px.svg'
 
 function BotaoTrue({indice}) {
   const ind = indice ? indice : 0
-  const {tarefas, setTarefas, setEditar, values} = useContext(ContextStorage)
+  const {setEditar, values} = useContext(ContextStorage)
 
   const auterarContentTarefa = () => {
     setEditar(false)
-    let tarefa_content = values.tarefa
+    let tarefa_content = values.tarefa ? values.tarefa : document.querySelector('.inputEdit').value
     console.log(tarefa_content)
     const tarefass = JSON.parse(localStorage.getItem('tasks'))
     const tarefa = tarefass[ind]
