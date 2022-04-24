@@ -28,8 +28,9 @@ function Tarefas() {
                 <ul className='containertarefas'>
                     {tarefas ? tarefas.map((item, index) => {
                         const { task } = item
+                        
                         return (
-                            <Tarefa key={index} tarefaTrueFalse={task.status ? "tarefaTrue" : "tarefaFalse"}>
+                            <Tarefa status={task.status} key={index} tarefaTrueFalse={task.status ? "tarefaTrue" : "tarefaFalse"}>
                                 <DescricaoTarefa>
                                     <DescricaoTarefaH2>{task.title}</DescricaoTarefaH2>
                                     <DescricaoTarefaP>
